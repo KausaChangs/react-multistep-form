@@ -1,10 +1,8 @@
 import { useMultiStepForm } from "./useMultiStepForm";
 
 function App() {
-  const { steps, currentStepIndex, step, isFirstStep } = useMultiStepForm([
-    <div>one</div>,
-    <div>two</div>,
-  ]);
+  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
+    useMultiStepForm([<div>one</div>, <div>two</div>]);
   return (
     <div
       style={{
@@ -30,8 +28,14 @@ function App() {
             justifyContent: "flex-end",
           }}
         >
-          {!isFirstStep && <button>Back</button>}
-          <button>Next</button>
+          {!isFirstStep && (
+            <button onClick={back} type="button">
+              Back
+            </button>
+          )}
+          <button onClick={next} type="button">
+            {isLastStep ? "Finish" : "Next"}
+          </button>
         </div>
       </form>
     </div>
