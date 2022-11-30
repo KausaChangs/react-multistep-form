@@ -31,7 +31,11 @@ const INITTIAL_DATA: FormData = {
 function App() {
   const [data, setData] = useState(INITTIAL_DATA);
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
-    useMultiStepForm([<UserForm />, <AddressForm />, <AccountForm />]);
+    useMultiStepForm([
+      <UserForm {...data} />,
+      <AddressForm {...data} />,
+      <AccountForm {...data} />,
+    ]);
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
