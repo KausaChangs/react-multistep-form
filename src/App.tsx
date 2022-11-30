@@ -4,7 +4,19 @@ import { AddressForm } from "./addressForm";
 import { useMultiStepForm } from "./useMultiStepForm";
 import { UserForm } from "./userForm";
 
-const INITTIAL_DATA = {
+type FormData = {
+  firstName: string;
+  lastName: string;
+  age: string;
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+  email: string;
+  password: string;
+};
+
+const INITTIAL_DATA: FormData = {
   firstName: "",
   lastName: "",
   age: "",
