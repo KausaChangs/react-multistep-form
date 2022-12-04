@@ -38,9 +38,9 @@ function App() {
   }
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultiStepForm([
-      <UserForm {...data} updateFeild={updateFeilds} />,
-      <AddressForm {...data} updateFeild={updateFeilds} />,
-      <AccountForm {...data} updateFeild={updateFeilds} />,
+      <UserForm {...data} updateFeilds={updateFeilds} />,
+      <AddressForm {...data} updateFeilds={updateFeilds} />,
+      <AccountForm {...data} updateFeilds={updateFeilds} />,
     ]);
 
   function onSubmit(e: FormEvent) {
