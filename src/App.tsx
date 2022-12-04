@@ -46,7 +46,7 @@ function App() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!isLastStep) return next();
-    alert("Successfull form submission");
+    alert("Successfull form submission"); // post or fetch request to an API would go here
   }
   return (
     <div
@@ -58,6 +58,7 @@ function App() {
         margin: "1rem",
         borderRadius: ".5rem",
         fontFamily: "Arial",
+        maxWidth: "max-content",
       }}
     >
       <form onSubmit={onSubmit}>
